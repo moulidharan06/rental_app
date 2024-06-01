@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+<div >
+<% contact.forEach(function(user) { %>
+    <div class="card ">
+        <div class="top">
+            <p class="display-3"><%=user.owners%></p>
+        </div>
+        <div class="bottom">
+            <h5 class="info" id="city"><%=user.city%></h3>
+            <h5 class="info"><%=user.phone%></h3>
+            <h5 class="info"><%=user.mail_id%></h3>
+            <table>
+            <tr>
+            <td>
+            <form action="/form" method="post">
+                
+                <button type="submit" name="id" value="<%= user.id %>" class="btn btn-dark">Like</button>
+            </form>
+            </td>
+            <td>
+            <h5 class="info"><%=user.likes%></h5>
+            </td>
+        </tr>
+        </table>
+        <form action="/gmail" method="post">
+            <input type="text" name="text">
+            <button type="submit" name="id" value="<%= user.id %>" class="btn btn-dark">Gmail</button>
+          </form>
+        
+       </div>
+    </div>
+    
+    
+<% }); %>
+</div>
+
+<%- include('partials/footer') %>

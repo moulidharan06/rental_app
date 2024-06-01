@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+
+<div class="jumbotron centered">
+  <h1>Login</h1>
+  <hr class="border border-danger border-2 opacity-50">
+  <div class="container">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Login</button>
+          </form>
+
+        </div>
+      </div>
+      <h5>Enter correct email and password</h5>
+    
+
+<%- include('partials/footer') %>
